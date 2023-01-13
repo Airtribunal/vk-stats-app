@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +9,22 @@
     --index: 1vw + 1vh
 }
 
-.body {
-    font-family: 'Montserrat', sans-serif;
+a {
+    text-decoration: none;
+    color: #000;
 }
 
+/* Body */
+.vkui--sizeX-regular.vkui--vkBase--light {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+}
+
+/* Greetings */
+
 .greetings-group {
-    margin-top: calc(var(--index) * 13);
+    margin-top: calc(var(--index) * 8);
+    margin-inline: 1em;
 }
 
 .greetings-title {
@@ -70,12 +79,28 @@
     border-right: 3px #fff solid;
 }
 
+.route-button:last-child {
+    border-left: 3px #fff solid;
+}
+
 /* Stats */
-.stats-title {
+.panel-title {
     width: fit-content;
     font-size: calc(var(--index) * 2.25);
     margin-inline: auto;
     margin-bottom: calc(var(--index) * 3.3);
+    margin-top: calc(var(--index) * 2);
+
+    background: #373b44; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsl(212deg 100% 50%), #4286f4); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsl(212deg 100% 50%), #4286f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.table-container {
+
 }
 
 .stats-table {
@@ -83,11 +108,11 @@
     max-width: 800px;
     height: 100%;
     margin: 0 auto;
-    border: 2px solid hsl(240, 1%, 58%);
-    text-align: center;
+    border: 1px solid hsl(240, 1%, 88%);
     margin-bottom: calc(var(--index) * 15);
     border-collapse: separate;
     border-spacing: 5px 10px;
+    border-radius: 10px;
 }
 
 thead {
@@ -95,12 +120,11 @@ thead {
     position: relative;
 }
 
-
 thead::after {
     content: '';
     width: 100%;
-    height: 3px;
-    background: hsl(0, 68%, 72%);
+    height: 1px;
+    background: hsl(240, 1%, 88%);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -111,11 +135,18 @@ thead::after {
     font-weight: 600;
 }
 
+.stores td {
+    padding: 5px;
+}
+
 .first-td {
     width: 30px;
 
     height: 30px;
     background: hsl(0, 68%, 72%);
     border-radius: 50%;
-    cursor: pointer;
+}
+
+.user-name {
+    display: flex;
 }

@@ -11,7 +11,6 @@ import {
   Div,
   Avatar,
 } from "@vkontakte/vkui";
-import "../style/global.css";
 
 const Home = ({ id, go, fetchedUser }) => (
   <Panel id={id}>
@@ -20,7 +19,6 @@ const Home = ({ id, go, fetchedUser }) => (
       <Group
         className="greetings-group"
         header={<Header mode="secondary">Приветсвие нашего сообщества</Header>}
-        sizeY="100"
       >
         <Cell
           before={
@@ -28,9 +26,7 @@ const Home = ({ id, go, fetchedUser }) => (
               <Avatar src={fetchedUser.photo_200} />
             ) : null
           }
-          description={
-            "Это твоя статистка на данный момент"
-          }
+          description={"Это твоя статистка на данный момент"}
         >
           <h3 className="greetings-title">{`Привет, ${fetchedUser.first_name} 👋`}</h3>
           <h4 className="greetings-balance">Баланс: 0 плюшек 🍬</h4>
@@ -54,6 +50,9 @@ const Home = ({ id, go, fetchedUser }) => (
       </button>
       <button onClick={() => go("stats")} className="route-button">
         Статистика
+      </button>
+      <button onClick={() => go("stores")} className="route-button">
+        Магазин
       </button>
     </div>
   </Panel>
